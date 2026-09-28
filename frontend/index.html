@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Student Career Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <h2>Career Tracker</h2>
+
+        <div>
+            <a href="index.html">Dashboard</a>
+            <a href="#">Applications</a>
+            <a href="#">DSA</a>
+            <a href="#">Tasks</a>
+            <a href="#">Interviews</a>
+            <a href="#">Resume</a>
+        </div>
+    </nav>
+
+
+    <!-- Dashboard -->
+    <main class="dashboard">
+
+        <section class="welcome">
+            <h1>Welcome to Student Career Tracker</h1>
+            <p>Track your placement preparation and career progress in one place.</p>
+        </section>
+
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <h3>Applications</h3>
+                <p class="stat-number" id="applicationCount">0</p>
+                <span>Total applications</span>
+            </div>
+
+            <div class="stat-card">
+                <h3>Interviews</h3>
+                <p class="stat-number" id="interviewCount">0</p>
+                <span>Upcoming interviews</span>
+            </div>
+
+            <div class="stat-card">
+                <h3>Selected</h3>
+               <p class="stat-number" id="selectedCount">0</p>
+                <span>Successful applications</span>
+            </div>
+
+            <div class="stat-card">
+                <h3>Tasks</h3>
+                <p class="stat-number" id="taskCount">0</p>
+                <span>Pending tasks</span>
+            </div>
+
+        </section>
+
+
+        <!-- Dashboard Sections -->
+        <section class="dashboard-grid">
+
+            <div class="dashboard-card">
+                <h2>DSA Progress</h2>
+                <p>Overall preparation progress</p>
+
+                <div class="progress-bar">
+                    <div class="progress" id="dsaProgressBar"></div>
+                </div>
+
+                <strong id="dsaProgressText">0%</strong>
+            </div>
+
+
+           <div class="dashboard-card">
+    <h2>Today's Tasks</h2>
+
+    <ul id="todayTasks">
+        <li>Loading tasks...</li>
+    </ul>
+</div>
+
+
+            <div class="dashboard-card">
+                <h2>Upcoming Interviews</h2>
+
+                <p id="upcomingInterview">Loading interviews...</p>
+            </div>
+
+
+            <div class="dashboard-card">
+                <h2>Quick Actions</h2>
+
+                <button onclick="window.location.href='applications.html'">
+    Add Application
+</button>
+                <button>Add Task</button>
+                <button>Update DSA</button>
+            </div>
+
+        </section>
+
+    </main>
+<script src="script.js"></script>
+</body>
+</html>

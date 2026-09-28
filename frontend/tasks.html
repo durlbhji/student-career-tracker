@@ -1,0 +1,62 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>Career Tracker</h2>
+        <div>
+            <a href="index.html">Dashboard</a>
+            <a href="applications.html">Applications</a>
+            <a href="dsa.html">DSA</a>
+            <a href="tasks.html">Tasks</a>
+        </div>
+    </nav>
+
+    <main class="container task-container">
+        <h1>Task Tracker</h1>
+        <p>Organize your daily tasks and track your progress.</p>
+
+        <section class="form-container">
+            <h2>Add New Task</h2>
+
+            <form id="taskForm">
+                <label for="taskTitle">Task Title</label>
+                <input type="text" id="taskTitle"
+                       placeholder="e.g. Complete Java practice" required>
+
+                <label for="taskDescription">Description</label>
+                <textarea id="taskDescription"
+                          placeholder="Enter task details"></textarea>
+
+                <label for="taskDueDate">Due Date</label>
+                <input type="date" id="taskDueDate" required>
+
+                <label for="taskCompleted">Completed</label>
+                <select id="taskCompleted">
+                    <option value="false">No</option>
+                    <option value="true">Yes</option>
+                </select>
+
+                <button type="submit" id="taskSubmitButton">
+                    Add Task
+                </button>
+                <p id="taskMessage"></p>
+            </form>
+        </section>
+
+        <section class="dsa-section">
+            <h2>Your Tasks</h2>
+            <div id="taskList">Loading tasks...</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

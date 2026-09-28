@@ -24,3 +24,4 @@ Thumbs.db
 # Local configuration
 application-local.properties
 backend/src/main/resources/application.properties
+backend/classpath.txt

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applications - Student Career Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <nav>
+        <h2>Career Tracker</h2>
+
+        <div>
+            <a href="index.html">Dashboard</a>
+            <a href="applications.html">Applications</a>
+            <a href="#">DSA</a>
+            <a href="#">Tasks</a>
+            <a href="#">Interviews</a>
+            <a href="#">Resume</a>
+        </div>
+    </nav>
+
+
+    <main class="dashboard">
+
+        <section class="welcome">
+            <h1>Job Applications</h1>
+            <p>Track companies and positions you have applied for.</p>
+        </section>
+
+
+        <section class="dashboard-card">
+
+            <h2>Add New Application</h2>
+
+            <form id="applicationForm">
+
+                <label for="company">Company</label>
+                <input
+                    type="text"
+                    id="company"
+                    placeholder="e.g. Google"
+                    required
+                >
+
+                <label for="role">Role</label>
+                <input
+                    type="text"
+                    id="role"
+                    placeholder="e.g. Software Developer"
+                    required
+                >
+
+                <label for="location">Location</label>
+                <input
+                    type="text"
+                    id="location"
+                    placeholder="e.g. Bangalore"
+                    required
+                >
+
+                <label for="status">Status</label>
+                <select id="status">
+                    <option value="Applied">Applied</option>
+                    <option value="Shortlisted">Shortlisted</option>
+                    <option value="Interview">Interview</option>
+                    <option value="Selected">Selected</option>
+                    <option value="Rejected">Rejected</option>
+                </select>
+
+                <label for="applicationDate">Application Date</label>
+                <input
+                    type="date"
+                    id="applicationDate"
+                    required
+                >
+
+                <button type="submit" id="applicationSubmitButton">
+    Add Application
+</button>
+
+            </form>
+
+            <p id="applicationMessage"></p>
+
+        </section>
+
+
+        <section class="dashboard-card">
+
+            <h2>Your Applications</h2>
+
+            <div id="applicationsList">
+                Loading applications...
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

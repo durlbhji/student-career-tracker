@@ -1,0 +1,812 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 40px;
+    background-color: #f5f7fa;
+    color: #222;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+p {
+    color: #555;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1f2937;
+    padding: 15px 25px;
+    margin: -40px -40px 40px -40px;
+}
+
+nav h2 {
+    color: white;
+    margin: 0;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+.login-container {
+    width: 350px;
+    margin: 80px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.login-container h1 {
+    text-align: center;
+    font-size: 24px;
+}
+
+.login-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.login-container label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.login-container input {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1f2937;
+    color: white;
+    cursor: pointer;
+}
+
+.login-container button:hover {
+    background-color: #374151;
+}
+
+.login-container p {
+    text-align: center;
+    margin-top: 20px;
+}
+.login-container input {
+    margin-bottom: 5px;
+}
+
+.login-container a {
+    color: #1f2937;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.login-container a:hover {
+    text-decoration: underline;
+}
+/* =========================
+   DASHBOARD
+   ========================= */
+
+.dashboard {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.welcome {
+    margin-bottom: 30px;
+}
+
+.welcome h1 {
+    margin-bottom: 8px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.stat-card h3 {
+    margin-top: 0;
+}
+
+.stat-number {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.dashboard-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h2 {
+    margin-top: 0;
+}
+
+.dashboard-card li {
+    margin-bottom: 10px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background-color: #e5e7eb;
+    border-radius: 10px;
+    margin: 20px 0 10px;
+}
+
+.progress {
+    width: 0%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #1f2937;
+}
+
+.dashboard-card button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1f2937;
+    color: white;
+    cursor: pointer;
+}
+
+.dashboard-card button:hover {
+    background-color: #374151;
+}
+@media (max-width: 900px) {
+
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+
+}
+/* =========================
+   APPLICATIONS
+   ========================= */
+
+#applicationForm {
+    display: grid;
+    gap: 10px;
+}
+
+#applicationForm input,
+#applicationForm select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+#applicationForm button {
+    width: fit-content;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 5px;
+    background-color: #1f2937;
+    color: white;
+    cursor: pointer;
+}
+
+#applicationForm button:hover {
+    background-color: #374151;
+}
+
+.application-item {
+    border: 1px solid #e5e7eb;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    background-color: #f9fafb;
+}
+
+.application-item h3 {
+    margin-top: 0;
+}
+
+.application-item p {
+    margin: 6px 0;
+}
+
+/* DSA Tracker Styling */
+
+.form-container,
+.dsa-section {
+    background: white;
+    padding: 25px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+#dsaForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#dsaForm input,
+#dsaForm select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+#dsaForm button {
+    width: fit-content;
+    padding: 10px 20px;
+    margin-top: 10px;
+    background: #1e293b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#dsaForm button:hover {
+    background: #334155;
+}
+
+#dsaList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+#dsaList .application-item {
+    padding: 20px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f8fafc;
+}
+
+#dsaList progress {
+    height: 12px;
+    accent-color: #16a34a;
+}
+
+/* ===== Task Tracker Styling ===== */
+
+.task-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 25px;
+}
+
+.task-container h1 {
+    text-align: center;
+    color: #1e293b;
+    margin-bottom: 25px;
+    font-size: 32px;
+}
+
+#taskForm {
+    max-width: 650px;
+    margin: 0 auto 35px;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+#taskForm label {
+    display: block;
+    margin: 15px 0 7px;
+    color: #334155;
+    font-weight: 600;
+}
+
+#taskForm input,
+#taskForm textarea,
+#taskForm select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 15px;
+    box-sizing: border-box;
+    outline: none;
+}
+
+#taskForm input:focus,
+#taskForm textarea:focus,
+#taskForm select:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+#taskForm textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+#taskSubmitButton {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+#taskSubmitButton:hover {
+    background: #1d4ed8;
+}
+
+#taskList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+#taskList .application-item {
+    background: #ffffff;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#taskList .application-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+#taskList .application-item h3 {
+    color: #1e293b;
+    font-size: 20px;
+    margin: 0 0 12px;
+    overflow-wrap: anywhere;
+}
+
+#taskList .application-item p {
+    color: #64748b;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+#taskList .application-item p:nth-of-type(2) {
+    font-weight: 600;
+}
+
+#taskList .application-item button {
+    padding: 9px 18px;
+    margin: 10px 8px 0 0;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#taskList .application-item button:first-of-type {
+    background: #2563eb;
+}
+
+#taskList .application-item button:first-of-type:hover {
+    background: #1d4ed8;
+}
+
+#taskList .application-item button:last-of-type {
+    background: #dc2626;
+}
+
+#taskList .application-item button:last-of-type:hover {
+    background: #b91c1c;
+}
+
+#taskMessage {
+    text-align: center;
+    color: #15803d;
+    margin-top: 15px;
+}
+
+/* Mobile responsive layout */
+@media (max-width: 600px) {
+    .task-container {
+        margin: 20px auto;
+        padding: 12px;
+    }
+
+    .task-container h1 {
+        font-size: 26px;
+    }
+
+    #taskForm {
+        padding: 18px;
+    }
+
+    #taskList {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Task Tracker Form */
+.task-container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 25px;
+}
+
+.task-container h1 {
+    text-align: center;
+    color: #1e293b;
+    font-size: 32px;
+}
+
+.task-container > p {
+    text-align: center;
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+#taskForm {
+    max-width: 650px;
+    margin: auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+#taskForm label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: 600;
+    color: #334155;
+}
+
+#taskForm input,
+#taskForm textarea,
+#taskForm select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+#taskForm textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+#taskForm input:focus,
+#taskForm textarea:focus,
+#taskForm select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+#taskSubmitButton {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#taskSubmitButton:hover {
+    background: #1d4ed8;
+}
+
+/* Task Cards */
+#taskList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+#taskList .application-item {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#taskList .application-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+
+#taskList .application-item h3 {
+    color: #1e293b;
+    font-size: 20px;
+    margin-top: 0;
+}
+
+#taskList .application-item p {
+    color: #64748b;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+/* Task Edit and Delete Buttons */
+#taskList .application-item button {
+    padding: 9px 18px;
+    margin: 10px 8px 0 0;
+    border: none;
+    border-radius: 7px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+/* Edit Button */
+#taskList .application-item button:first-of-type {
+    background: #2563eb;
+}
+
+#taskList .application-item button:first-of-type:hover {
+    background: #1d4ed8;
+}
+
+/* Delete Button */
+#taskList .application-item button:last-of-type {
+    background: #dc2626;
+}
+
+#taskList .application-item button:last-of-type:hover {
+    background: #b91c1c;
+}
+
+/* Responsive Task Tracker */
+@media (max-width: 600px) {
+    .task-container {
+        margin: 20px auto;
+        padding: 12px;
+    }
+
+    .task-container h1 {
+        font-size: 26px;
+    }
+
+    #taskForm {
+        padding: 18px;
+    }
+
+    #taskList {
+        grid-template-columns: 1fr;
+    }
+
+    #taskList .application-item button {
+        padding: 9px 14px;
+    }
+}
+
+/* Interview Tracker */
+.interview-section {
+    margin-top: 40px;
+}
+
+.interview-section h2 {
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+#interviewForm {
+    max-width: 650px;
+    margin: auto;
+    padding: 25px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+#interviewForm label {
+    display: block;
+    margin: 15px 0 7px;
+    font-weight: 600;
+    color: #334155;
+}
+
+#interviewForm input,
+#interviewForm textarea,
+#interviewForm select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 7px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+#interviewForm textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+#interviewForm input:focus,
+#interviewForm textarea:focus,
+#interviewForm select:focus {
+    outline: none;
+    border-color: #2563eb;
+}
+
+#interviewSubmitButton {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+#interviewSubmitButton:hover {
+    background: #1d4ed8;
+}
+
+#interviewList {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+#interviewList .application-item {
+    background: white;
+    padding: 22px;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+#interviewList .application-item h3 {
+    color: #1e293b;
+    font-size: 20px;
+}
+
+#interviewList .application-item p {
+    color: #64748b;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    #interviewForm {
+        padding: 18px;
+    }
+
+    #interviewList {
+        grid-template-columns: 1fr;
+    }
+}
+/* Interview Edit and Delete Buttons */
+#interviewList button {
+    padding: 8px 16px;
+    margin: 10px 8px 5px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 14px;
+}
+
+#interviewList button:first-of-type {
+    background-color: #007bff;
+}
+
+#interviewList button:last-of-type {
+    background-color: #dc3545;
+}
+
+#interviewList button:hover {
+    opacity: 0.8;
+}
+/* Resume Tracker */
+.resume-container {
+    max-width: 800px;
+    margin: 30px auto;
+}
+
+#resumeForm {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#resumeForm input,
+#resumeForm textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+#resumeForm textarea {
+    min-height: 80px;
+    resize: vertical;
+}
+
+#resumeForm button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#resumeForm button:hover {
+    background-color: #0056b3;
+}

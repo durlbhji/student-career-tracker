@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav>
+        <a href="index.html">Dashboard</a>
+        <a href="applications.html">Applications</a>
+        <a href="dsa.html">DSA</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="interviews.html">Interviews</a>
+        <a href="resume.html">Resume</a>
+    </nav>
+
+    <main class="container resume-container">
+        <h1>Resume Tracker</h1>
+        <p>Manage your resume details here.</p>
+
+        <section class="form-container">
+            <h2>Resume Profile</h2>
+
+            <form id="resumeForm">
+                <label for="resumeName">Full Name</label>
+                <input type="text" id="resumeName" required>
+
+                <label for="resumeEmail">Email</label>
+                <input type="email" id="resumeEmail" required>
+                <label for="resumePhone">Phone</label>
+<input type="tel" id="resumePhone">
+
+<label for="resumeGithub">GitHub</label>
+<input type="url" id="resumeGithub">
+
+<label for="resumeLinkedin">LinkedIn</label>
+<input type="url" id="resumeLinkedin">
+
+                <label for="resumeSkills">Skills</label>
+                <textarea id="resumeSkills" required></textarea>
+
+                <label for="resumeEducation">Education</label>
+                <textarea id="resumeEducation" required></textarea>
+
+                <label for="resumeProjects">Projects</label>
+                <textarea id="resumeProjects"></textarea>
+
+                <button type="submit">Save Resume</button>
+                <p id="resumeMessage"></p>
+            </form>
+             <button type="button" id="downloadResume">
+                Download Resume
+            </button>
+        </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

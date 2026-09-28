@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interview Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <h2>Career Tracker</h2>
+        <div>
+            <a href="index.html">Dashboard</a>
+            <a href="applications.html">Applications</a>
+            <a href="dsa.html">DSA</a>
+            <a href="tasks.html">Tasks</a>
+            <a href="interviews.html">Interviews</a>
+        </div>
+    </nav>
+
+    <main class="container">
+        <h1>Interview Tracker</h1>
+        <p>Manage your upcoming and completed interviews.</p>
+
+        <section class="form-container">
+            <h2>Add New Interview</h2>
+
+            <form id="interviewForm">
+                <label for="interviewCompany">Company</label>
+                <input type="text" id="interviewCompany"
+                       placeholder="e.g. Google" required>
+
+                <label for="interviewRole">Job Role</label>
+                <input type="text" id="interviewRole"
+                       placeholder="e.g. Java Developer" required>
+
+                <label for="interviewDate">Interview Date</label>
+                <input type="date" id="interviewDate" required>
+
+                <label for="interviewRound">Interview Round</label>
+                <input type="text" id="interviewRound"
+                       placeholder="e.g. Technical Round 1" required>
+
+                <label for="interviewResult">Result</label>
+                <select id="interviewResult">
+                    <option value="Scheduled">Scheduled</option>
+                    <option value="Selected">Selected</option>
+                    <option value="Rejected">Rejected</option>
+                    <option value="Pending">Pending</option>
+                </select>
+
+                <label for="interviewNotes">Notes</label>
+                <textarea id="interviewNotes"
+                          placeholder="Enter interview notes"></textarea>
+
+                <button type="submit" id="interviewSubmitButton">
+                    Add Interview
+                </button>
+
+                <p id="interviewMessage"></p>
+            </form>
+        </section>
+
+        <section class="interview-section">
+            <h2>Your Interviews</h2>
+            <div id="interviewList">Loading interviews...</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
