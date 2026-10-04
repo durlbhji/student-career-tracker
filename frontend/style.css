@@ -1,197 +1,1391 @@
-body {
-    font-family: Arial, sans-serif;
+/* =========================================================
+   STUDENT CAREER & PLACEMENT TRACKER
+   Modern Professional UI
+   ========================================================= */
+
+/* =========================
+   GLOBAL
+   ========================= */
+
+* {
     margin: 0;
-    padding: 40px;
-    background-color: #f5f7fa;
-    color: #222;
-}
-
-h1 {
-    margin-bottom: 10px;
-}
-
-p {
-    color: #555;
-}
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #1f2937;
-    padding: 15px 25px;
-    margin: -40px -40px 40px -40px;
-}
-
-nav h2 {
-    color: white;
-    margin: 0;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-}
-
-nav a:hover {
-    text-decoration: underline;
-}
-.login-container {
-    width: 350px;
-    margin: 80px auto;
-    background-color: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.login-container h1 {
-    text-align: center;
-    font-size: 24px;
-}
-
-.login-container h2 {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.login-container label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 5px;
-}
-
-.login-container input {
-    width: 100%;
-    padding: 10px;
+    padding: 0;
     box-sizing: border-box;
-    border: 1px solid #ccc;
-    border-radius: 5px;
 }
 
-.login-container button {
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    border: none;
-    border-radius: 5px;
-    background-color: #1f2937;
-    color: white;
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --primary-light: #eff6ff;
+
+    --purple: #7c3aed;
+    --purple-light: #f5f3ff;
+
+    --success: #16a34a;
+    --success-light: #f0fdf4;
+
+    --warning: #f59e0b;
+    --warning-light: #fffbeb;
+
+    --danger: #dc2626;
+    --danger-light: #fef2f2;
+
+    --dark: #0f172a;
+    --dark-light: #1e293b;
+
+    --text: #1e293b;
+    --muted: #64748b;
+
+    --background: #f5f7fb;
+    --white: #ffffff;
+    --border: #e2e8f0;
+
+    --shadow-sm: 0 2px 8px rgba(15, 23, 42, 0.05);
+    --shadow: 0 8px 25px rgba(15, 23, 42, 0.08);
+    --shadow-lg: 0 15px 40px rgba(15, 23, 42, 0.12);
+
+    --radius: 14px;
+    --radius-lg: 20px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+}
+
+button {
     cursor: pointer;
 }
 
-.login-container button:hover {
-    background-color: #374151;
-}
-
-.login-container p {
-    text-align: center;
-    margin-top: 20px;
-}
-.login-container input {
-    margin-bottom: 5px;
-}
-
-.login-container a {
-    color: #1f2937;
+a {
     text-decoration: none;
-    font-weight: bold;
 }
 
-.login-container a:hover {
-    text-decoration: underline;
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 5%;
+
+    background: rgba(15, 23, 42, 0.97);
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
 }
-/* =========================
-   DASHBOARD
-   ========================= */
+
+
+/* Brand */
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-logo {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #3b82f6,
+        #7c3aed
+    );
+
+    color: white;
+
+    font-size: 14px;
+    font-weight: 800;
+
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.35);
+}
+
+.nav-brand h2 {
+    color: white;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.nav-brand span {
+    color: #94a3b8;
+    font-size: 11px;
+}
+
+
+/* Navigation links */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+
+    padding: 9px 13px;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    transform: translateY(-1px);
+}
+
+.nav-links a.active {
+    background: #2563eb;
+    color: white;
+}
+
+
+/* =========================================================
+   MAIN DASHBOARD
+   ========================================================= */
 
 .dashboard {
-    max-width: 1200px;
+    width: min(1250px, 90%);
     margin: 0 auto;
+
+    padding: 45px 0 70px;
 }
 
-.welcome {
+
+/* =========================================================
+   HERO SECTION
+   ========================================================= */
+
+.career-hero {
+    position: relative;
+
+    min-height: 360px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    overflow: hidden;
+
+    padding: 50px 55px;
+
     margin-bottom: 30px;
+
+    border-radius: var(--radius-lg);
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(124, 58, 237, 0.5),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #172554,
+            #1e3a8a 55%,
+            #312e81
+        );
+
+    color: white;
+
+    box-shadow: var(--shadow-lg);
 }
 
-.welcome h1 {
-    margin-bottom: 8px;
+
+/* Decorative circles */
+
+.career-hero::before {
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+    height: 280px;
+
+    right: 180px;
+    bottom: -170px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.05);
 }
+
+.career-hero::after {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    right: 30px;
+    top: -90px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.06);
+}
+
+
+/* Hero text */
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 650px;
+}
+
+.hero-badge {
+    display: inline-flex;
+
+    padding: 7px 13px;
+
+    margin-bottom: 18px;
+
+    border-radius: 50px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    color: #dbeafe;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.hero-content h1 {
+    font-size: clamp(34px, 4vw, 52px);
+
+    line-height: 1.08;
+
+    margin-bottom: 18px;
+
+    letter-spacing: -1.5px;
+}
+
+.hero-content h1 span {
+    display: block;
+
+    background: linear-gradient(
+        90deg,
+        #93c5fd,
+        #c4b5fd
+    );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.hero-content p {
+    max-width: 620px;
+
+    color: #cbd5e1;
+
+    font-size: 16px;
+
+    margin-bottom: 28px;
+}
+
+
+/* Hero buttons */
+
+.hero-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.hero-buttons button {
+    border: none;
+
+    padding: 12px 19px;
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: #1d4ed8;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.hero-buttons button:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.hero-buttons .secondary-btn {
+    background: rgba(255, 255, 255, 0.1);
+
+    border: 1px solid rgba(255, 255, 255, 0.25);
+
+    color: white;
+}
+
+
+/* =========================================================
+   HERO ILLUSTRATION
+   ========================================================= */
+
+.hero-illustration {
+    position: relative;
+
+    width: 380px;
+    height: 280px;
+
+    flex-shrink: 0;
+}
+
+.illustration-circle {
+    position: absolute;
+
+    width: 230px;
+    height: 230px;
+
+    top: 25px;
+    left: 75px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(96, 165, 250, 0.25),
+            rgba(167, 139, 250, 0.2)
+        );
+
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.person-icon {
+    position: absolute;
+
+    left: 135px;
+    top: 78px;
+
+    width: 110px;
+    height: 110px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    font-size: 55px;
+
+    box-shadow:
+        0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.illustration-card {
+    position: absolute;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 12px 15px;
+
+    min-width: 120px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    color: var(--text);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+.illustration-card span {
+    font-size: 18px;
+}
+
+.illustration-card strong {
+    font-size: 20px;
+}
+
+.illustration-card small {
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.card-one {
+    top: 5px;
+    right: 10px;
+}
+
+.card-two {
+    bottom: 15px;
+    left: 10px;
+}
+
+.card-three {
+    bottom: 0;
+    right: 20px;
+}
+
+
+/* =========================================================
+   STATISTICS
+   ========================================================= */
 
 .stats {
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-    margin-bottom: 30px;
+
+    gap: 18px;
+
+    margin-bottom: 25px;
 }
 
 .stat-card {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 22px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    box-shadow: var(--shadow-sm);
+
+    overflow: hidden;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.stat-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 70px;
+    height: 70px;
+
+    right: -25px;
+    bottom: -30px;
+
+    border-radius: 50%;
+
+    background: var(--primary-light);
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow);
+}
+
+.stat-icon {
+    position: relative;
+    z-index: 1;
+
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 12px;
+
+    background: var(--primary-light);
+
+    font-size: 22px;
+}
+
+.interview-stat .stat-icon {
+    background: var(--purple-light);
+}
+
+.selected-stat .stat-icon {
+    background: var(--warning-light);
+}
+
+.task-stat .stat-icon {
+    background: var(--success-light);
 }
 
 .stat-card h3 {
-    margin-top: 0;
+    margin: 0;
+
+    color: var(--muted);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
 }
 
 .stat-number {
-    font-size: 32px;
-    font-weight: bold;
-    margin: 10px 0;
+    margin: 2px 0;
+
+    color: var(--dark);
+
+    font-size: 30px;
+
+    line-height: 1.1;
+
+    font-weight: 800;
 }
+
+.stat-card span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   DASHBOARD GRID
+   ========================================================= */
 
 .dashboard-grid {
     display: grid;
+
     grid-template-columns: repeat(2, 1fr);
+
     gap: 20px;
+
+    margin-bottom: 35px;
 }
 
 .dashboard-card {
-    background-color: white;
-    padding: 25px;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius);
+
+    padding: 28px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.dashboard-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow);
+}
+
+
+/* Card header */
+
+.card-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+
+    margin-bottom: 18px;
+}
+
+.section-label {
+    display: block;
+
+    margin-bottom: 3px;
+
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
 }
 
 .dashboard-card h2 {
-    margin-top: 0;
+    color: var(--dark);
+
+    font-size: 22px;
+
+    line-height: 1.2;
 }
 
-.dashboard-card li {
-    margin-bottom: 10px;
+.card-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 11px;
+
+    background: var(--primary-light);
+
+    font-size: 19px;
+}
+
+.card-description {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================================
+   DSA PROGRESS
+   ========================================================= */
+
+.progress-info {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 8px;
+
+    margin-bottom: 9px;
+}
+
+.progress-info strong {
+    color: var(--primary);
+
+    font-size: 30px;
+
+    line-height: 1;
+}
+
+.progress-info span {
+    color: var(--muted);
+
+    font-size: 12px;
+
+    padding-bottom: 2px;
 }
 
 .progress-bar {
     width: 100%;
-    height: 12px;
-    background-color: #e5e7eb;
-    border-radius: 10px;
-    margin: 20px 0 10px;
+    height: 11px;
+
+    overflow: hidden;
+
+    background: #e5e7eb;
+
+    border-radius: 50px;
+
+    margin: 12px 0 20px;
 }
 
 .progress {
     width: 0%;
+
     height: 100%;
-    border-radius: 10px;
-    background-color: #1f2937;
+
+    border-radius: 50px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    transition: width 0.7s ease;
 }
 
-.dashboard-card button {
-    padding: 10px 15px;
-    margin: 5px;
+.card-action {
     border: none;
-    border-radius: 5px;
-    background-color: #1f2937;
-    color: white;
-    cursor: pointer;
+
+    background: transparent;
+
+    color: var(--primary);
+
+    font-size: 13px;
+    font-weight: 700;
+
+    padding: 0;
+
+    transition: color 0.2s ease;
 }
 
-.dashboard-card button:hover {
-    background-color: #374151;
+.card-action:hover {
+    color: var(--primary-dark);
 }
-@media (max-width: 900px) {
+
+
+/* =========================================================
+   TODAY'S TASKS
+   ========================================================= */
+
+#todayTasks {
+    list-style: none;
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 10px;
+
+    margin: 5px 0 20px;
+}
+
+#todayTasks li {
+    position: relative;
+
+    padding: 11px 13px 11px 38px;
+
+    background: #f8fafc;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+#todayTasks li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 12px;
+    top: 9px;
+
+    width: 20px;
+    height: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: var(--success-light);
+
+    color: var(--success);
+
+    font-size: 11px;
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   INTERVIEW
+   ========================================================= */
+
+.interview-highlight {
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin: 20px 0;
+}
+
+.interview-icon {
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 14px;
+
+    background: var(--purple-light);
+
+    font-size: 25px;
+}
+
+#upcomingInterview {
+    margin: 0 0 4px;
+
+    color: var(--text);
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.interview-highlight span {
+    color: var(--muted);
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   QUICK ACTIONS
+   ========================================================= */
+
+.quick-actions {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 10px;
+
+    margin-top: 22px;
+}
+
+.quick-actions button {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 7px;
+
+    min-height: 45px;
+
+    padding: 10px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: #f8fafc;
+
+    color: var(--text);
+
+    font-size: 12px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.quick-actions button:hover {
+    background: var(--primary-light);
+
+    border-color: #bfdbfe;
+
+    color: var(--primary);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   TARGET COMPANIES
+   ========================================================= */
+
+.companies-section {
+    margin-top: 15px;
+
+    margin-bottom: 30px;
+}
+
+.section-heading {
+    margin-bottom: 20px;
+}
+
+.section-heading h2 {
+    margin: 3px 0 4px;
+
+    color: var(--dark);
+
+    font-size: 25px;
+}
+
+.section-heading p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.company-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(6, 1fr);
+
+    gap: 13px;
+}
+
+.company-card {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 135px;
+
+    padding: 18px 10px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    box-shadow: var(--shadow-sm);
+
+    text-align: center;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.company-card:hover {
+    transform: translateY(-5px);
+
+    border-color: #bfdbfe;
+
+    box-shadow: var(--shadow);
+}
+
+.company-logo {
+    width: 48px;
+    height: 48px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-bottom: 10px;
+
+    border-radius: 12px;
+
+    color: white;
+
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.google-logo {
+    background: linear-gradient(135deg, #4285f4, #34a853);
+}
+
+.microsoft-logo {
+    background: linear-gradient(135deg, #2563eb, #06b6d4);
+}
+
+.amazon-logo {
+    background: linear-gradient(135deg, #f59e0b, #ea580c);
+}
+
+.tcs-logo {
+    background: linear-gradient(135deg, #1e40af, #2563eb);
+}
+
+.infosys-logo {
+    background: linear-gradient(135deg, #0284c7, #0ea5e9);
+}
+
+.accenture-logo {
+    background: linear-gradient(135deg, #7c3aed, #9333ea);
+}
+
+.company-card strong {
+    color: var(--text);
+
+    font-size: 13px;
+}
+
+.company-card span {
+    margin-top: 2px;
+
+    color: var(--muted);
+
+    font-size: 10px;
+}
+
+
+/* =========================================================
+   CAREER TIP
+   ========================================================= */
+
+.career-tip {
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 25px 28px;
+
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            135deg,
+            #eff6ff,
+            #f5f3ff
+        );
+
+    border: 1px solid #dbeafe;
+
+    margin-top: 25px;
+}
+
+.tip-icon {
+    width: 58px;
+    height: 58px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 15px;
+
+    background: white;
+
+    box-shadow: var(--shadow-sm);
+
+    font-size: 27px;
+}
+
+.career-tip span {
+    color: var(--primary);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 1px;
+}
+
+.career-tip h2 {
+    margin: 3px 0;
+
+    color: var(--dark);
+
+    font-size: 20px;
+}
+
+.career-tip p {
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   GENERAL FOR OTHER PROJECT PAGES
+   ========================================================= */
+
+body:not(.dashboard) {
+    min-height: 100vh;
+}
+
+.container,
+.form-container,
+.application-container,
+.dsa-section,
+.tasks-container,
+.interviews-container,
+.resume-container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* Forms */
+
+input,
+select,
+textarea {
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: white;
+
+    color: var(--text);
+
+    outline: none;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #60a5fa;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(37, 99, 235, 0.1);
+}
+
+label {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* General buttons */
+
+button {
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 10px 16px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover {
+    background: var(--primary-dark);
+
+    transform: translateY(-1px);
+
+    box-shadow: 0 5px 12px rgba(37, 99, 235, 0.2);
+}
+
+
+/* =========================================================
+   LOGIN / REGISTER
+   ========================================================= */
+
+.login-container {
+    width: min(420px, 90%);
+
+    margin: 80px auto;
+
+    padding: 35px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: var(--shadow-lg);
+}
+
+.login-container h1 {
+    margin-bottom: 8px;
+
+    color: var(--dark);
+
+    text-align: center;
+}
+
+.login-container h2 {
+    margin-bottom: 25px;
+
+    color: var(--muted);
+
+    text-align: center;
+
+    font-size: 16px;
+}
+
+.login-container label {
+    margin-top: 15px;
+}
+
+.login-container button {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 12px;
+}
+
+.login-container p {
+    margin-top: 18px;
+
+    text-align: center;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.login-container a {
+    color: var(--primary);
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   APPLICATION / DSA / TASK / INTERVIEW CARDS
+   ========================================================= */
+
+.application-item {
+    margin-bottom: 15px;
+
+    padding: 20px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 13px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.application-item:hover {
+    transform: translateY(-2px);
+
+    box-shadow: var(--shadow);
+}
+
+.application-item h3 {
+    margin-bottom: 8px;
+
+    color: var(--dark);
+}
+
+.application-item p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+    .company-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-illustration {
+        width: 320px;
+        transform: scale(0.9);
+    }
+
+    .career-hero {
+        padding: 40px;
+    }
+}
+
+
+@media (max-width: 850px) {
+
+    .main-nav {
+        flex-direction: column;
+
+        gap: 15px;
+
+        padding: 15px 20px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
 
     .stats {
         grid-template-columns: repeat(2, 1fr);
@@ -201,612 +1395,994 @@ nav a:hover {
         grid-template-columns: 1fr;
     }
 
-    nav {
+    .career-hero {
         flex-direction: column;
-        gap: 15px;
+
+        text-align: center;
+
+        gap: 20px;
     }
 
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .hero-illustration {
+        display: none;
+    }
 }
 
+
 @media (max-width: 600px) {
+
+    .dashboard {
+        width: 92%;
+
+        padding-top: 25px;
+    }
 
     .stats {
         grid-template-columns: 1fr;
     }
 
-    nav a {
-        display: block;
-        margin: 8px 0;
+    .company-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 
+    .career-hero {
+        padding: 32px 22px;
+
+        min-height: auto;
+    }
+
+    .hero-content h1 {
+        font-size: 34px;
+    }
+
+    .dashboard-card {
+        padding: 21px;
+    }
+
+    .quick-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .career-tip {
+        align-items: flex-start;
+
+        padding: 20px;
+    }
+
+    .nav-links {
+        gap: 3px;
+    }
+
+    .nav-links a {
+        padding: 7px 8px;
+
+        font-size: 12px;
+    }
 }
-/* =========================
+
+
+/* =========================================================
+   SCROLLBAR
+   ========================================================= */
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+/* =========================================================
+   PROFESSIONAL INNER PAGES
+   Applications / DSA / Tasks / Interviews / Resume
+   ========================================================= */
+
+
+/* =========================================================
+   COMMON PAGE LAYOUT
+   ========================================================= */
+
+body > main:not(.dashboard) {
+    width: min(1150px, 90%);
+    margin: 0 auto;
+    padding: 45px 0 70px;
+}
+
+.page-title,
+body > main:not(.dashboard) > h1 {
+    color: var(--dark);
+    font-size: 34px;
+    font-weight: 800;
+    margin-bottom: 8px;
+}
+
+.page-subtitle {
+    color: var(--muted);
+    margin-bottom: 30px;
+}
+
+
+/* =========================================================
+   OLD NAVBAR ON INNER PAGES
+   ========================================================= */
+
+body > nav:not(.main-nav) {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 14px 5%;
+    margin: 0;
+
+    background: rgba(15, 23, 42, 0.97);
+
+    box-shadow: 0 4px 20px rgba(15, 23, 42, 0.15);
+}
+
+body > nav:not(.main-nav) h2 {
+    color: white;
+    font-size: 19px;
+}
+
+body > nav:not(.main-nav) a {
+    display: inline-block;
+
+    margin-left: 4px;
+
+    padding: 9px 13px;
+
+    color: #cbd5e1;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+    transition: 0.2s ease;
+}
+
+body > nav:not(.main-nav) a:hover {
+    background: rgba(255,255,255,0.08);
+    color: white;
+
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   FORM CONTAINERS
+   ========================================================= */
+
+.form-container,
+.dsa-section,
+.task-container,
+.interview-section,
+.resume-container {
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    padding: 30px;
+
+    margin: 25px 0;
+}
+
+.form-container h1,
+.form-container h2,
+.dsa-section h1,
+.dsa-section h2,
+.task-container h1,
+.interview-section h1,
+.interview-section h2,
+.resume-container h1,
+.resume-container h2 {
+
+    color: var(--dark);
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
    APPLICATIONS
-   ========================= */
+   ========================================================= */
 
 #applicationForm {
+
     display: grid;
-    gap: 10px;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+    padding: 28px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
+    margin-bottom: 30px;
 }
 
-#applicationForm input,
-#applicationForm select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
+#applicationForm label {
+    margin-top: 0;
 }
 
 #applicationForm button {
     width: fit-content;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 5px;
-    background-color: #1f2937;
-    color: white;
-    cursor: pointer;
+
+    padding: 12px 22px;
+
+    margin-top: 5px;
+
+    background: var(--primary);
+
+    border-radius: 9px;
 }
 
 #applicationForm button:hover {
-    background-color: #374151;
+    background: var(--primary-dark);
 }
 
-.application-item {
-    border: 1px solid #e5e7eb;
-    padding: 15px;
-    margin-top: 15px;
-    border-radius: 8px;
-    background-color: #f9fafb;
+#applicationMessage {
+    grid-column: 1 / -1;
+
+    color: var(--success);
+
+    font-weight: 600;
+
+    font-size: 13px;
 }
 
-.application-item h3 {
-    margin-top: 0;
+
+/* Applications list */
+
+#applicationsList {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
 }
 
-.application-item p {
-    margin: 6px 0;
-}
+#applicationsList .application-item {
 
-/* DSA Tracker Styling */
+    position: relative;
 
-.form-container,
-.dsa-section {
+    margin: 0;
+
+    padding: 24px;
+
     background: white;
-    padding: 25px;
-    margin: 20px 0;
-    border-radius: 10px;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: 0.2s ease;
 }
 
-#dsaForm {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
+#applicationsList .application-item:hover {
 
-#dsaForm input,
-#dsaForm select {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-#dsaForm button {
-    width: fit-content;
-    padding: 10px 20px;
-    margin-top: 10px;
-    background: #1e293b;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#dsaForm button:hover {
-    background: #334155;
-}
-
-#dsaList {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-#dsaList .application-item {
-    padding: 20px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    background: #f8fafc;
-}
-
-#dsaList progress {
-    height: 12px;
-    accent-color: #16a34a;
-}
-
-/* ===== Task Tracker Styling ===== */
-
-.task-container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 25px;
-}
-
-.task-container h1 {
-    text-align: center;
-    color: #1e293b;
-    margin-bottom: 25px;
-    font-size: 32px;
-}
-
-#taskForm {
-    max-width: 650px;
-    margin: 0 auto 35px;
-    padding: 25px;
-    background: #ffffff;
-    border-radius: 14px;
-    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
-}
-
-#taskForm label {
-    display: block;
-    margin: 15px 0 7px;
-    color: #334155;
-    font-weight: 600;
-}
-
-#taskForm input,
-#taskForm textarea,
-#taskForm select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 8px;
-    font-size: 15px;
-    box-sizing: border-box;
-    outline: none;
-}
-
-#taskForm input:focus,
-#taskForm textarea:focus,
-#taskForm select:focus {
-    border-color: #2563eb;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
-}
-
-#taskForm textarea {
-    min-height: 90px;
-    resize: vertical;
-}
-
-#taskSubmitButton {
-    width: 100%;
-    margin-top: 20px;
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: #2563eb;
-    color: white;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-#taskSubmitButton:hover {
-    background: #1d4ed8;
-}
-
-#taskList {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-}
-
-#taskList .application-item {
-    background: #ffffff;
-    padding: 22px;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-#taskList .application-item:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+
+    box-shadow: var(--shadow);
 }
 
-#taskList .application-item h3 {
-    color: #1e293b;
+#applicationsList .application-item h3 {
+
+    color: var(--dark);
+
     font-size: 20px;
-    margin: 0 0 12px;
-    overflow-wrap: anywhere;
+
+    margin-bottom: 14px;
 }
 
-#taskList .application-item p {
-    color: #64748b;
-    line-height: 1.6;
-    overflow-wrap: anywhere;
+#applicationsList .application-item p {
+
+    color: var(--muted);
+
+    margin: 7px 0;
+
+    font-size: 13px;
 }
 
-#taskList .application-item p:nth-of-type(2) {
-    font-weight: 600;
+#applicationsList .application-item strong {
+
+    color: var(--text);
 }
 
-#taskList .application-item button {
-    padding: 9px 18px;
-    margin: 10px 8px 0 0;
-    border: none;
-    border-radius: 7px;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
+
+/* Buttons inside cards */
+
+#applicationsList .application-item button {
+
+    margin-top: 15px;
+
+    margin-right: 8px;
+
+    padding: 9px 15px;
+
+    font-size: 12px;
 }
 
-#taskList .application-item button:first-of-type {
-    background: #2563eb;
+#applicationsList .application-item button:last-child {
+
+    background: var(--danger);
 }
 
-#taskList .application-item button:first-of-type:hover {
-    background: #1d4ed8;
-}
+#applicationsList .application-item button:last-child:hover {
 
-#taskList .application-item button:last-of-type {
-    background: #dc2626;
-}
-
-#taskList .application-item button:last-of-type:hover {
     background: #b91c1c;
 }
 
-#taskMessage {
-    text-align: center;
-    color: #15803d;
-    margin-top: 15px;
-}
 
-/* Mobile responsive layout */
-@media (max-width: 600px) {
-    .task-container {
-        margin: 20px auto;
-        padding: 12px;
-    }
+/* =========================================================
+   DSA PAGE
+   ========================================================= */
 
-    .task-container h1 {
-        font-size: 26px;
-    }
+#dsaForm {
 
-    #taskForm {
-        padding: 18px;
-    }
+    display: grid;
 
-    #taskList {
-        grid-template-columns: 1fr;
-    }
-}
+    grid-template-columns: 1fr 1fr;
 
-/* Task Tracker Form */
-.task-container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 25px;
-}
+    gap: 18px;
 
-.task-container h1 {
-    text-align: center;
-    color: #1e293b;
-    font-size: 32px;
-}
+    padding: 28px;
 
-.task-container > p {
-    text-align: center;
-    color: #64748b;
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
+
     margin-bottom: 30px;
 }
 
-#taskForm {
-    max-width: 650px;
-    margin: auto;
-    padding: 25px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+#dsaForm button {
+
+    width: fit-content;
+
+    padding: 12px 22px;
+
+    background: var(--primary);
+
+    border-radius: 9px;
 }
 
-#taskForm label {
-    display: block;
-    margin: 15px 0 7px;
+#dsaForm button:hover {
+
+    background: var(--primary-dark);
+}
+
+#dsaMessage {
+
+    grid-column: 1 / -1;
+
+    color: var(--success);
+
     font-weight: 600;
-    color: #334155;
+
+    font-size: 13px;
 }
 
-#taskForm input,
-#taskForm textarea,
-#taskForm select {
+
+/* DSA cards */
+
+#dsaList {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(270px, 1fr));
+
+    gap: 18px;
+}
+
+#dsaList .application-item {
+
+    position: relative;
+
+    margin: 0;
+
+    padding: 23px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: 0.2s ease;
+}
+
+#dsaList .application-item:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow);
+}
+
+#dsaList .application-item h3 {
+
+    color: var(--dark);
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
+}
+
+#dsaList .application-item p {
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin: 7px 0;
+}
+
+
+/* DSA progress */
+
+#dsaList progress {
+
     width: 100%;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 7px;
-    box-sizing: border-box;
-    font-size: 15px;
+
+    height: 10px;
+
+    margin: 10px 0 14px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+#dsaList progress::-webkit-progress-bar {
+
+    background: #e2e8f0;
+
+    border-radius: 20px;
+}
+
+#dsaList progress::-webkit-progress-value {
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    border-radius: 20px;
+}
+
+#dsaList progress::-moz-progress-bar {
+
+    background:
+        linear-gradient(
+            90deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    border-radius: 20px;
+}
+
+
+/* =========================================================
+   TASK PAGE
+   ========================================================= */
+
+.task-container {
+
+    max-width: 1150px;
+
+    margin: 35px auto;
+
+    padding: 0;
+}
+
+
+/* Task heading */
+
+.task-container > h1 {
+
+    text-align: left;
+
+    font-size: 34px;
+
+    margin-bottom: 25px;
+}
+
+
+/* Task form */
+
+#taskForm {
+
+    max-width: none;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+    margin: 0 0 30px;
+
+    padding: 30px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
 }
 
 #taskForm textarea {
-    min-height: 90px;
-    resize: vertical;
-}
 
-#taskForm input:focus,
-#taskForm textarea:focus,
-#taskForm select:focus {
-    outline: none;
-    border-color: #2563eb;
+    grid-column: 1 / -1;
+
+    min-height: 110px;
 }
 
 #taskSubmitButton {
-    width: 100%;
-    margin-top: 20px;
-    padding: 12px;
-    border: none;
-    border-radius: 7px;
-    background: #2563eb;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+
+    width: fit-content;
+
+    padding: 12px 22px;
+
+    background: var(--primary);
+
+    border-radius: 9px;
 }
 
 #taskSubmitButton:hover {
-    background: #1d4ed8;
+
+    background: var(--primary-dark);
 }
 
-/* Task Cards */
+#taskMessage {
+
+    grid-column: 1 / -1;
+
+    color: var(--success);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* Task list */
+
 #taskList {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 18px;
 }
 
 #taskList .application-item {
+
+    margin: 0;
+
+    padding: 24px;
+
     background: white;
-    padding: 22px;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-    transition: transform 0.2s, box-shadow 0.2s;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: 0.2s ease;
 }
 
 #taskList .application-item:hover {
+
     transform: translateY(-4px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+
+    box-shadow: var(--shadow);
 }
 
 #taskList .application-item h3 {
-    color: #1e293b;
-    font-size: 20px;
-    margin-top: 0;
+
+    color: var(--dark);
+
+    font-size: 19px;
+
+    margin-bottom: 10px;
 }
 
 #taskList .application-item p {
-    color: #64748b;
-    line-height: 1.6;
-    overflow-wrap: anywhere;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin: 7px 0;
 }
 
-/* Task Edit and Delete Buttons */
 #taskList .application-item button {
-    padding: 9px 18px;
-    margin: 10px 8px 0 0;
-    border: none;
-    border-radius: 7px;
-    color: white;
-    font-weight: 600;
-    cursor: pointer;
-    transition: background 0.2s;
+
+    margin-top: 13px;
+
+    margin-right: 7px;
+
+    padding: 9px 15px;
+
+    font-size: 12px;
 }
 
-/* Edit Button */
-#taskList .application-item button:first-of-type {
-    background: #2563eb;
+#taskList .application-item button:last-child {
+
+    background: var(--danger);
 }
 
-#taskList .application-item button:first-of-type:hover {
-    background: #1d4ed8;
-}
 
-/* Delete Button */
-#taskList .application-item button:last-of-type {
-    background: #dc2626;
-}
+/* =========================================================
+   INTERVIEW PAGE
+   ========================================================= */
 
-#taskList .application-item button:last-of-type:hover {
-    background: #b91c1c;
-}
-
-/* Responsive Task Tracker */
-@media (max-width: 600px) {
-    .task-container {
-        margin: 20px auto;
-        padding: 12px;
-    }
-
-    .task-container h1 {
-        font-size: 26px;
-    }
-
-    #taskForm {
-        padding: 18px;
-    }
-
-    #taskList {
-        grid-template-columns: 1fr;
-    }
-
-    #taskList .application-item button {
-        padding: 9px 14px;
-    }
-}
-
-/* Interview Tracker */
 .interview-section {
-    margin-top: 40px;
-}
 
-.interview-section h2 {
-    color: #1e293b;
-    margin-bottom: 20px;
+    max-width: 1150px;
+
+    margin: 35px auto;
+
+    padding: 0;
 }
 
 #interviewForm {
-    max-width: 650px;
-    margin: auto;
-    padding: 25px;
+
+    max-width: none;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+    margin: 0 0 30px;
+
+    padding: 30px;
+
     background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-}
 
-#interviewForm label {
-    display: block;
-    margin: 15px 0 7px;
-    font-weight: 600;
-    color: #334155;
-}
+    border: 1px solid var(--border);
 
-#interviewForm input,
-#interviewForm textarea,
-#interviewForm select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #cbd5e1;
-    border-radius: 7px;
-    box-sizing: border-box;
-    font-size: 15px;
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
 }
 
 #interviewForm textarea {
-    min-height: 90px;
-    resize: vertical;
-}
 
-#interviewForm input:focus,
-#interviewForm textarea:focus,
-#interviewForm select:focus {
-    outline: none;
-    border-color: #2563eb;
+    grid-column: 1 / -1;
+
+    min-height: 110px;
 }
 
 #interviewSubmitButton {
-    width: 100%;
-    margin-top: 20px;
-    padding: 12px;
-    border: none;
-    border-radius: 7px;
-    background: #2563eb;
-    color: white;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
+
+    width: fit-content;
+
+    padding: 12px 22px;
+
+    background: var(--primary);
+
+    border-radius: 9px;
 }
 
 #interviewSubmitButton:hover {
-    background: #1d4ed8;
+
+    background: var(--primary-dark);
 }
 
+#interviewMessage {
+
+    grid-column: 1 / -1;
+
+    color: var(--success);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* Interview list */
+
 #interviewList {
+
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 20px;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 18px;
 }
 
 #interviewList .application-item {
+
+    margin: 0;
+
+    padding: 25px;
+
     background: white;
-    padding: 22px;
-    border-radius: 12px;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+
+    box-shadow: var(--shadow-sm);
+
+    transition: 0.2s ease;
+}
+
+#interviewList .application-item:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow);
 }
 
 #interviewList .application-item h3 {
-    color: #1e293b;
+
+    color: var(--dark);
+
     font-size: 20px;
+
+    margin-bottom: 12px;
 }
 
 #interviewList .application-item p {
-    color: #64748b;
-    line-height: 1.6;
-    overflow-wrap: anywhere;
+
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin: 7px 0;
 }
 
-@media (max-width: 600px) {
-    #interviewForm {
-        padding: 18px;
-    }
+#interviewList .application-item button {
 
-    #interviewList {
-        grid-template-columns: 1fr;
-    }
-}
-/* Interview Edit and Delete Buttons */
-#interviewList button {
-    padding: 8px 16px;
-    margin: 10px 8px 5px 0;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
-    font-size: 14px;
+    margin-top: 13px;
+
+    margin-right: 7px;
+
+    padding: 9px 15px;
+
+    font-size: 12px;
 }
 
-#interviewList button:first-of-type {
-    background-color: #007bff;
+#interviewList .application-item button:last-child {
+
+    background: var(--danger);
 }
 
-#interviewList button:last-of-type {
-    background-color: #dc3545;
-}
 
-#interviewList button:hover {
-    opacity: 0.8;
-}
-/* Resume Tracker */
-.resume-container {
-    max-width: 800px;
-    margin: 30px auto;
-}
+/* =========================================================
+   RESUME PAGE
+   ========================================================= */
 
 #resumeForm {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+
+    max-width: 900px;
+
+    margin: 0 auto 25px;
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 18px;
+
+    padding: 32px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: var(--shadow);
 }
 
-#resumeForm input,
 #resumeForm textarea {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 15px;
-}
 
-#resumeForm textarea {
-    min-height: 80px;
+    grid-column: 1 / -1;
+
+    min-height: 130px;
+
     resize: vertical;
 }
 
 #resumeForm button {
-    padding: 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+
+    width: fit-content;
+
+    padding: 12px 22px;
+
+    background: var(--primary);
+
+    border-radius: 9px;
 }
 
 #resumeForm button:hover {
-    background-color: #0056b3;
+
+    background: var(--primary-dark);
+}
+
+#resumeMessage {
+
+    grid-column: 1 / -1;
+
+    color: var(--success);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* Resume download */
+
+#downloadResume {
+
+    display: block;
+
+    margin: 0 auto 35px;
+
+    padding: 13px 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7c3aed,
+            #2563eb
+        );
+
+    border-radius: 10px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 7px 18px
+        rgba(124, 58, 237, 0.2);
+}
+
+#downloadResume:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 10px 25px
+        rgba(124, 58, 237, 0.3);
+}
+
+
+/* =========================================================
+   RESPONSIVE — INNER PAGES
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    #applicationForm,
+    #dsaForm,
+    #taskForm,
+    #interviewForm,
+    #resumeForm {
+
+        grid-template-columns: 1fr;
+    }
+
+    #applicationForm button,
+    #dsaForm button,
+    #taskSubmitButton,
+    #interviewSubmitButton {
+
+        width: 100%;
+    }
+
+    #applicationsList {
+
+        grid-template-columns: 1fr;
+    }
+
+    body > nav:not(.main-nav) {
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+    body > nav:not(.main-nav) a {
+
+        margin-left: 2px;
+
+        font-size: 12px;
+    }
+}
+
+
+@media (max-width: 550px) {
+
+    body > main:not(.dashboard) {
+
+        width: 92%;
+
+        padding-top: 25px;
+    }
+
+    .form-container,
+    .dsa-section,
+    .task-container,
+    .interview-section,
+    .resume-container {
+
+        padding: 20px;
+    }
+
+    #applicationForm,
+    #dsaForm,
+    #taskForm,
+    #interviewForm,
+    #resumeForm {
+
+        padding: 20px;
+    }
+
+    .page-title,
+    body > main:not(.dashboard) > h1,
+    .task-container > h1 {
+
+        font-size: 28px;
+    }
 }

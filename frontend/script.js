@@ -1,3 +1,14 @@
+
+// Check whether the user is logged in
+const publicPages = ["index.html", "login.html", "register.html"];
+const currentPage = window.location.pathname.split("/").pop();
+
+if (
+    !publicPages.includes(currentPage) &&
+    localStorage.getItem("isLoggedIn") !== "true"
+) {
+    window.location.href = "login.html";
+}
 // ===============================
 // REGISTRATION
 // ===============================
@@ -91,9 +102,8 @@ if (loginForm) {
 
                 message.textContent = "Login successful!";
 
-                setTimeout(function() {
-                    window.location.href = "index.html";
-                }, 1000);
+                localStorage.setItem("isLoggedIn", "true");
+window.location.href = "dashboard.html";
 
             } else {
 
@@ -638,7 +648,7 @@ async function loadDsaTopics() {
         dsaList.textContent = "Unable to load DSA topics.";
     }
 }
-
+loadDsaTopics();
 // Task Tracker: Add Task
 
 // Task Tracker: Add, Edit and Delete

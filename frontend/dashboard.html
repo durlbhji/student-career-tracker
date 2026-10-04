@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard - Student Career Tracker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="main-nav">
+
+    <div class="nav-brand">
+        <div class="brand-logo">CT</div>
+
+        <div>
+            <h2>Career Tracker</h2>
+            <span>Student Placement Hub</span>
+        </div>
+    </div>
+
+    <div class="nav-links">
+
+        <a class="active" href="dashboard.html">Dashboard</a>
+        <a href="applications.html">Applications</a>
+        <a href="dsa.html">DSA</a>
+        <a href="tasks.html">Tasks</a>
+        <a href="interviews.html">Interviews</a>
+        <a href="resume.html">Resume</a>
+
+    </div>
+
+</nav>
+
+
+<!-- ================= MAIN DASHBOARD ================= -->
+
+<main class="dashboard">
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="career-hero">
+
+        <div class="hero-content">
+
+            <span class="hero-badge">
+                🚀 Your placement journey starts here
+            </span>
+
+            <h1>
+                Build your career.
+                <span>Track your progress.</span>
+            </h1>
+
+            <p>
+                Manage applications, prepare for interviews,
+                improve your DSA skills and stay ready for your
+                dream job — all from one dashboard.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button onclick="window.location.href='applications.html'">
+                    + Add Application
+                </button>
+
+                <button class="secondary-btn"
+                    onclick="window.location.href='resume.html'">
+                    View Resume
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Career Illustration -->
+
+        <div class="hero-illustration">
+
+            <div class="illustration-circle"></div>
+
+            <div class="illustration-card card-one">
+                <span>📈</span>
+                <strong>55%</strong>
+                <small>DSA Progress</small>
+            </div>
+
+            <div class="illustration-card card-two">
+                <span>💼</span>
+                <strong>2</strong>
+                <small>Applications</small>
+            </div>
+
+            <div class="illustration-card card-three">
+                <span>🎯</span>
+                <strong>Ready</strong>
+                <small>Keep preparing</small>
+            </div>
+
+            <div class="person-icon">
+                👨‍💻
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= STATISTICS ================= -->
+
+    <section class="stats">
+
+        <div class="stat-card application-stat">
+
+            <div class="stat-icon">
+                💼
+            </div>
+
+            <div>
+                <h3>Applications</h3>
+
+                <p class="stat-number"
+                   id="applicationCount">
+                    0
+                </p>
+
+                <span>Total applications</span>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card interview-stat">
+
+            <div class="stat-icon">
+                🎤
+            </div>
+
+            <div>
+                <h3>Interviews</h3>
+
+                <p class="stat-number"
+                   id="interviewCount">
+                    0
+                </p>
+
+                <span>Upcoming interviews</span>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card selected-stat">
+
+            <div class="stat-icon">
+                🏆
+            </div>
+
+            <div>
+                <h3>Selected</h3>
+
+                <p class="stat-number"
+                   id="selectedCount">
+                    0
+                </p>
+
+                <span>Successful applications</span>
+            </div>
+
+        </div>
+
+
+        <div class="stat-card task-stat">
+
+            <div class="stat-icon">
+                ✅
+            </div>
+
+            <div>
+                <h3>Tasks</h3>
+
+                <p class="stat-number"
+                   id="taskCount">
+                    0
+                </p>
+
+                <span>Pending tasks</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MAIN GRID ================= -->
+
+    <section class="dashboard-grid">
+
+
+        <!-- DSA PROGRESS -->
+
+        <div class="dashboard-card dsa-dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+                    <span class="section-label">
+                        PREPARATION
+                    </span>
+
+                    <h2>DSA Progress</h2>
+                </div>
+
+                <div class="card-icon">
+                    💻
+                </div>
+
+            </div>
+
+            <p class="card-description">
+                Your overall Data Structures & Algorithms
+                preparation progress.
+            </p>
+
+
+            <div class="progress-info">
+
+                <strong id="dsaProgressText">
+                    0%
+                </strong>
+
+                <span>Overall Progress</span>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    class="progress"
+                    id="dsaProgressBar">
+                </div>
+
+            </div>
+
+
+            <button
+                class="card-action"
+                onclick="window.location.href='dsa.html'">
+
+                Continue DSA →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- TODAY'S TASKS -->
+
+        <div class="dashboard-card tasks-dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+                    <span class="section-label">
+                        TODAY
+                    </span>
+
+                    <h2>Today's Tasks</h2>
+                </div>
+
+                <div class="card-icon">
+                    📋
+                </div>
+
+            </div>
+
+
+            <ul id="todayTasks">
+
+                <li>Loading tasks...</li>
+
+            </ul>
+
+
+            <button
+                class="card-action"
+                onclick="window.location.href='tasks.html'">
+
+                View All Tasks →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- UPCOMING INTERVIEW -->
+
+        <div class="dashboard-card interview-dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+                    <span class="section-label">
+                        NEXT OPPORTUNITY
+                    </span>
+
+                    <h2>Upcoming Interview</h2>
+                </div>
+
+                <div class="card-icon">
+                    📅
+                </div>
+
+            </div>
+
+
+            <div class="interview-highlight">
+
+                <div class="interview-icon">
+                    🏢
+                </div>
+
+                <div>
+
+                    <p id="upcomingInterview">
+                        Loading interviews...
+                    </p>
+
+                    <span>
+                        Stay prepared and keep practicing.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="card-action"
+                onclick="window.location.href='interviews.html'">
+
+                View Interviews →
+
+            </button>
+
+        </div>
+
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="dashboard-card quick-dashboard-card">
+
+            <div class="card-header">
+
+                <div>
+                    <span class="section-label">
+                        SHORTCUTS
+                    </span>
+
+                    <h2>Quick Actions</h2>
+                </div>
+
+                <div class="card-icon">
+                    ⚡
+                </div>
+
+            </div>
+
+
+            <div class="quick-actions">
+
+                <button
+                    onclick="window.location.href='applications.html'">
+
+                    <span>💼</span>
+                    Add Application
+
+                </button>
+
+
+                <button
+                    onclick="window.location.href='tasks.html'">
+
+                    <span>✅</span>
+                    Add Task
+
+                </button>
+
+
+                <button
+                    onclick="window.location.href='dsa.html'">
+
+                    <span>💻</span>
+                    Update DSA
+
+                </button>
+
+
+                <button
+                    onclick="window.location.href='resume.html'">
+
+                    <span>📄</span>
+                    Update Resume
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= COMPANY TARGETS ================= -->
+
+    <section class="companies-section">
+
+        <div class="section-heading">
+
+            <div>
+
+                <span class="section-label">
+                    DREAM BIG
+                </span>
+
+                <h2>Target Companies</h2>
+
+                <p>
+                    Keep your career goals in sight.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="company-grid">
+
+            <div class="company-card">
+                <div class="company-logo google-logo">
+                    G
+                </div>
+                <strong>Google</strong>
+                <span>Technology</span>
+            </div>
+
+
+            <div class="company-card">
+                <div class="company-logo microsoft-logo">
+                    M
+                </div>
+                <strong>Microsoft</strong>
+                <span>Technology</span>
+            </div>
+
+
+            <div class="company-card">
+                <div class="company-logo amazon-logo">
+                    A
+                </div>
+                <strong>Amazon</strong>
+                <span>Technology</span>
+            </div>
+
+
+            <div class="company-card">
+                <div class="company-logo tcs-logo">
+                    T
+                </div>
+                <strong>TCS</strong>
+                <span>IT Services</span>
+            </div>
+
+
+            <div class="company-card">
+                <div class="company-logo infosys-logo">
+                    I
+                </div>
+                <strong>Infosys</strong>
+                <span>IT Services</span>
+            </div>
+
+
+            <div class="company-card">
+                <div class="company-logo accenture-logo">
+                    A
+                </div>
+                <strong>Accenture</strong>
+                <span>Consulting</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CAREER TIP ================= -->
+
+    <section class="career-tip">
+
+        <div class="tip-icon">
+            💡
+        </div>
+
+        <div>
+
+            <span>CAREER TIP</span>
+
+            <h2>
+                Consistency beats intensity.
+            </h2>
+
+            <p>
+                Solve a few DSA problems every day,
+                keep your resume updated and regularly
+                track new opportunities.
+            </p>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+</body>
+</html>
