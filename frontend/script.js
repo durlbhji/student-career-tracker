@@ -33,7 +33,7 @@ if (registerForm) {
 
         try {
 
-            const response = await fetch("http://localhost:8080/api/users", {
+            const response = await fetch("https://student-career-tracker-production.up.railway.app/api/users", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -88,7 +88,7 @@ if (loginForm) {
 
         try {
 
-            const response = await fetch("http://localhost:8080/api/login", {
+            const response = await fetch("https://student-career-tracker-production.up.railway.app/api/login", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -128,7 +128,7 @@ const applicationCount = document.getElementById("applicationCount");
 
 if (applicationCount) {
 
-    fetch("http://localhost:8080/api/applications")
+    fetch("https://student-career-tracker-production.up.railway.app/api/applications")
         .then(response => response.json())
         .then(applications => {
 
@@ -149,7 +149,7 @@ const interviewCount = document.getElementById("interviewCount");
 
 if (interviewCount) {
 
-    fetch("http://localhost:8080/api/interviews")
+    fetch("https://student-career-tracker-production.up.railway.app/api/interviews")
         .then(response => response.json())
         .then(interviews => {
 
@@ -170,7 +170,7 @@ const taskCount = document.getElementById("taskCount");
 
 if (taskCount) {
 
-    fetch("http://localhost:8080/api/tasks")
+    fetch("https://student-career-tracker-production.up.railway.app/api/tasks")
         .then(response => response.json())
         .then(tasks => {
 
@@ -192,7 +192,7 @@ const dsaProgressBar = document.getElementById("dsaProgressBar");
 
 if (dsaProgressText && dsaProgressBar) {
 
-    fetch("http://localhost:8080/api/dsa")
+    fetch("https://student-career-tracker-production.up.railway.app/api/dsa")
         .then(response => response.json())
         .then(topics => {
 
@@ -229,7 +229,7 @@ const selectedCount = document.getElementById("selectedCount");
 
 if (selectedCount) {
 
-    fetch("http://localhost:8080/api/applications")
+    fetch("https://student-career-tracker-production.up.railway.app/api/applications")
         .then(response => response.json())
         .then(applications => {
 
@@ -254,7 +254,7 @@ const todayTasks = document.getElementById("todayTasks");
 
 if (todayTasks) {
 
-    fetch("http://localhost:8080/api/tasks")
+    fetch("https://student-career-tracker-production.up.railway.app/api/tasks")
         .then(response => response.json())
         .then(tasks => {
 
@@ -292,7 +292,7 @@ const upcomingInterview = document.getElementById("upcomingInterview");
 
 if (upcomingInterview) {
 
-    fetch("http://localhost:8080/api/interviews")
+    fetch("https://student-career-tracker-production.up.railway.app/api/interviews")
         .then(response => response.json())
         .then(interviews => {
 
@@ -345,8 +345,8 @@ if (applicationForm) {
         const submitButton = document.getElementById("applicationSubmitButton");
 
         const url = editingApplicationId
-            ? `http://localhost:8080/api/applications/${editingApplicationId}`
-            : "http://localhost:8080/api/applications";
+            ? `https://student-career-tracker-production.up.railway.app/api/applications/${editingApplicationId}`
+            : "https://student-career-tracker-production.up.railway.app/api/applications";
 
         const method = editingApplicationId ? "PUT" : "POST";
 
@@ -390,7 +390,7 @@ const applicationList = document.getElementById("applicationsList");
 
 
 if (applicationList) {
-    fetch("http://localhost:8080/api/applications")
+    fetch("https://student-career-tracker-production.up.railway.app/api/applications")
         .then(response => response.json())
         .then(applications => {
             applicationList.innerHTML = "";
@@ -440,7 +440,7 @@ if (applicationList) {
 
                 deleteButton.addEventListener("click", () => {
                     if (confirm("Are you sure you want to delete this application?")) {
-                        fetch(`http://localhost:8080/api/applications/${application.id}`, {
+                        fetch(`https://student-career-tracker-production.up.railway.app/api/applications/${application.id}`, {
                             method: "DELETE"
                         })
                         .then(response => {
@@ -483,7 +483,7 @@ if (dsaForm) {
         const message = document.getElementById("dsaMessage");
 
         try {
-            const response = await fetch("http://localhost:8080/api/dsa", {
+            const response = await fetch("https://student-career-tracker-production.up.railway.app/api/dsa", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -516,7 +516,7 @@ async function loadDsaTopics() {
     }
 
     try {
-        const response = await fetch("http://localhost:8080/api/dsa");
+        const response = await fetch("https://student-career-tracker-production.up.railway.app/api/dsa");
 
         if (!response.ok) {
             throw new Error("Failed to load topics");
@@ -582,7 +582,7 @@ async function loadDsaTopics() {
 
                 try {
                     const updateResponse = await fetch(
-                        `http://localhost:8080/api/dsa/${topic.id}`,
+                        `https://student-career-tracker-production.up.railway.app/api/dsa/${topic.id}`,
                         {
                             method: "PUT",
                             headers: {
@@ -619,7 +619,7 @@ async function loadDsaTopics() {
 
                 try {
                     const deleteResponse = await fetch(
-                        `http://localhost:8080/api/dsa/${topic.id}`,
+                        `https://student-career-tracker-production.up.railway.app/api/dsa/${topic.id}`,
                         { method: "DELETE" }
                     );
 
@@ -669,8 +669,8 @@ if (taskForm) {
 
         const message = document.getElementById("taskMessage");
         const url = editingTaskId
-            ? `http://localhost:8080/api/tasks/${editingTaskId}`
-            : "http://localhost:8080/api/tasks";
+            ? `https://student-career-tracker-production.up.railway.app/api/tasks/${editingTaskId}`
+            : "https://student-career-tracker-production.up.railway.app/api/tasks";
 
         try {
             const response = await fetch(url, {
@@ -706,7 +706,7 @@ async function loadTasks() {
     if (!taskList) return;
 
     try {
-        const response = await fetch("http://localhost:8080/api/tasks");
+        const response = await fetch("https://student-career-tracker-production.up.railway.app/api/tasks");
 
         if (!response.ok) {
             throw new Error("Unable to load tasks");
@@ -769,7 +769,7 @@ async function loadTasks() {
 
                 try {
                     const response = await fetch(
-                        `http://localhost:8080/api/tasks/${task.id}`,
+                        `https://student-career-tracker-production.up.railway.app/api/tasks/${task.id}`,
                         { method: "DELETE" }
                     );
 
@@ -818,8 +818,8 @@ if (interviewForm) {
 
         const message = document.getElementById("interviewMessage");
         const url = editingInterviewId
-            ? `http://localhost:8080/api/interviews/${editingInterviewId}`
-            : "http://localhost:8080/api/interviews";
+            ? `https://student-career-tracker-production.up.railway.app/api/interviews/${editingInterviewId}`
+            : "https://student-career-tracker-production.up.railway.app/api/interviews";
 
         try {
             const response = await fetch(url, {
@@ -850,7 +850,7 @@ async function loadInterviews() {
     if (!interviewList) return;
 
     try {
-        const response = await fetch("http://localhost:8080/api/interviews");
+        const response = await fetch("https://student-career-tracker-production.up.railway.app/api/interviews");
         if (!response.ok) throw new Error("Failed to load interviews");
 
         const interviews = await response.json();
@@ -905,7 +905,7 @@ async function loadInterviews() {
 
                 try {
                     const response = await fetch(
-                        `http://localhost:8080/api/interviews/${interview.id}`,
+                        `https://student-career-tracker-production.up.railway.app/api/interviews/${interview.id}`,
                         { method: "DELETE" }
                     );
 
@@ -946,7 +946,7 @@ if (resumeForm) {
     // Load existing resume
     async function loadResume() {
         try {
-            const response = await fetch("http://localhost:8080/api/resume");
+            const response = await fetch("https://student-career-tracker-production.up.railway.app/api/resume");
 
             if (!response.ok) {
                 throw new Error("Unable to load resume");
@@ -993,8 +993,8 @@ if (resumeForm) {
         };
 
         const url = editingResumeId
-            ? `http://localhost:8080/api/resume/${editingResumeId}`
-            : "http://localhost:8080/api/resume";
+            ? `https://student-career-tracker-production.up.railway.app/api/resume/${editingResumeId}`
+            : "https://student-career-tracker-production.up.railway.app/api/resume";
 
         const method = editingResumeId ? "PUT" : "POST";
 
